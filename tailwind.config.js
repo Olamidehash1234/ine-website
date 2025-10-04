@@ -8,4 +8,11 @@ export default {
     extend: {},
   },
   plugins: [],
+  fontFamily: {
+    Manrope: ['Manrope', 'sans-serif'],
+    Poppins: ['Poppins', 'sans-serif'],
+    YoungSerif: ['Young Serif', 'serif'],
+    PTsans: ['PT Sans', 'sans-serif'],
+    PlusJakartaSans: ['Plus Jakarta Sans', 'sans-serif'],
+  }
 }

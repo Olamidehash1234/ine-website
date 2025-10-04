@@ -4,6 +4,9 @@ import Matters from './matters'
 import Get from './get'
 import Works from './works';
 import Journey from './journey'
+import Testimonials from './testimonial';
+import Pricing from './pricing'
+import Action from './action';
 
 const Homepage = () => {
   return (
@@ -14,6 +17,9 @@ const Homepage = () => {
         <Matters />
         <Get />
         <Journey />
+        <Testimonials />
+        <Pricing />
+        <Action />
     </div>
   );
 };
