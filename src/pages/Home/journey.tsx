@@ -67,7 +67,7 @@ export default function Journey() {
                         <h2 className="font-bold text-[21.3px] text-[#050395]"> Internship & Real-World Experience </h2>
 
                         <p className="font-bold text-[14px] text-[#000000]">6–12 month internship in partner companies.</p>
-                        <p>Benefits: Real product work, mentorship, networking, 4 years of experience by graduation.</p>
+                        <p className="text-[#494949] font-medium">Benefits: Real product work, mentorship, networking, 4 years of experience by graduation.</p>
                     </div>
                     <img src="/icon4.svg" alt="" />
                     <div className="h-[70px] bg-[#7193FF] w-[2.54px]"></div>

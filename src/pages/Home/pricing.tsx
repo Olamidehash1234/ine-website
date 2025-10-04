@@ -60,7 +60,7 @@ export default function Pricing() {
                     <h2 className="font-semibold sm:text-[22px] text-white">Hybrid Growth</h2>
 
                     <p className="text-white text-[16px] mt-[10px]">Best for students who want mentorship, branding, and bigger opportunities.</p>
-                    <div className="mt-6 mb-[16px] flex items-center gap-4">
+                    <div className="mt-6 mb-[16px] flex items-center text-center gap-4">
                         <div className="text-4xl sm:text-[56px] font-semibold text-white">₦75,000</div>
                         <div className="text-[16px] text-white mt-2">/ Month</div>
                     </div>
