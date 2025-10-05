@@ -25,16 +25,10 @@ export default function HeroSection() {
                 </div>
 
                 {/* sponsors corner */}
-                <div className=" mt-[50px] lg:mt-[100px] overflow-hidden">
+                <div id="works" className=" pt-[50px] lg:mt-[100px] overflow-hidden">
                     <p className="font-semibold text-[#373737] lg:text-[18px]">Global Tech Tools & Employers</p>
 
                     <div className="flex gap-[20px] mt-[10px] items-center justify-between animate-marquee whitespace-nowrap">
-                        <img src="/hero/coinbase.svg" alt="Coinbase" className="inline-block" />
-                        <img src="/hero/spotify.svg" alt="Spotify" className="inline-block" />
-                        <img src="/hero/slack.svg" alt="Slack" className="inline-block" />
-                        <img src="/hero/dropbox.svg" alt="Dropbox" className="inline-block" />
-                        <img src="/hero/zoom.svg" alt="Zoom" className="inline-block" />
-                        {/* Duplicate logos for seamless marquee effect */}
                         <img src="/hero/coinbase.svg" alt="Coinbase" className="inline-block" />
                         <img src="/hero/spotify.svg" alt="Spotify" className="inline-block" />
                         <img src="/hero/slack.svg" alt="Slack" className="inline-block" />

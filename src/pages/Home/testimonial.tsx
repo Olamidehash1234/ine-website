@@ -35,7 +35,7 @@ const Stars = () => (
 
 export default function Testimonials() {
     return (
-        <section className="px-[16px] pt-[60px] pb-[80px] sm:px-[80px] sm:pt-[60px] sm:pb-[120px]">
+        <section id="testimonials" className="px-[16px] pt-[60px] pb-[80px] sm:px-[80px] sm:pt-[60px] sm:pb-[120px]">
             <div className="flex gap-[5px] align-center items-center mb-[10px]">
                 <img src="/chat.svg" alt="" />
                 <p className="text-[16px] lg:text-[20px] font-medium leading-[26px] text-[#000000]">Testimonials</p>

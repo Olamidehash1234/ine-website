@@ -3,6 +3,10 @@ import { useState } from "react";
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleLinkClick = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <section className="section relative">
       <div className="bg-[#00048F] py-[20px] px-[16px] sm:py-[30px] sm:px-[80px] flex justify-between items-center">
@@ -12,10 +16,10 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden sm:flex items-center space-x-[30px] text-white text-[16px] font-medium">
-          <a href="">About</a>
-          <a href="">Industries</a>
-          <a href="">Pricing</a>
-          <a href="">Testimonials</a>
+          <a href="#about">About</a>
+          <a href="#works">Industries</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#testimonials">Testimonials</a>
         </div>
 
         {/* Mobile Menu Toggle */}
@@ -38,10 +42,10 @@ export default function Navbar() {
 
           {/* Menu */}
           <div className="fixed top-0 right-0 w-[250px] h-full bg-[#00048F] text-white text-[16px] font-medium flex flex-col space-y-[20px] py-[20px] px-[16px] z-20">
-            <a href="">About</a>
-            <a href="">Industries</a>
-            <a href="">Pricing</a>
-            <a href="">Testimonials</a>
+            <a href="#about" onClick={handleLinkClick}>About</a>
+            <a href="#works" onClick={handleLinkClick}>Industries</a>
+            <a href="#pricing" onClick={handleLinkClick}>Pricing</a>
+            <a href="#testimonials" onClick={handleLinkClick}>Testimonials</a>
           </div>
         </>
       )}

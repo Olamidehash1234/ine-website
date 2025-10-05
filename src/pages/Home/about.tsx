@@ -1,6 +1,6 @@
 export default function AboutSection() {
     return (
-        <div className="px-[16px] pt-[60px] pb-[40px] sm:px-[80px] sm:pt-[80px] sm:pb-[120px]">
+        <div id="about" className="px-[16px] pt-[60px] pb-[40px] sm:px-[80px] sm:pt-[80px] sm:pb-[120px]">
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-[20px] lg:gap-[30px] items-center"> 
                 <div>
                     <div className="flex gap-[5px] align-center items-center mb-[10px]">
