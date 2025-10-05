@@ -6,8 +6,8 @@ export default function Pricing() {
                 <p className="text-[16px] lg:text-[20px] font-medium leading-[26px] text-[#000000]">Pricing</p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 mt-[30px]">
-                <div className="border border-gray-300 rounded-lg px-[24px] py-[40px] m-2">
+            <div className="grid grid-cols-1 sm:grid-cols-2 mt-[30px] gap-[20px]">
+                <div className="border border-gray-300 rounded-lg px-[24px] py-[40px]">
                     <h2 className="font-semibold sm:text-[22px] text-[#191D23]">Starter</h2>
 
                     <p className="text-[#44474D] text-[16px] mt-[10px]">Ideal for students who want structured growth alongside school.</p>
@@ -56,7 +56,7 @@ export default function Pricing() {
                     </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-[#2157FF] via-[#0006CC] to-[#6A00FF] rounded-[12px] px-[24px] py-[40px] m-2">
+                <div className="bg-gradient-to-br from-[#2157FF] via-[#0006CC] to-[#6A00FF] rounded-[12px] px-[24px] py-[40px]">
                     <h2 className="font-semibold sm:text-[22px] text-white">Hybrid Growth</h2>
 
                     <p className="text-white text-[16px] mt-[10px]">Best for students who want mentorship, branding, and bigger opportunities.</p>

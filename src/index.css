@@ -27,6 +27,13 @@
     /* max-height: 180px; */
   }
 
+  @media (max-width: 768px) {
+    .funny-image {
+      top: -2px;
+      max-height: 120px;
+    }
+  }
+
   .section {
     max-height: 305px;
   }
@@ -83,9 +90,9 @@
 /* small responsive tweaks - tighten the band on very small screens */
 @media (max-width: 480px) {
   .site-footer::before {
-    top: -48px;
-    height: 90px;
-    filter: blur(5px);
+    top: -90px;
+    height: 50px;
+    filter: blur(40px);
   }
 }
 
