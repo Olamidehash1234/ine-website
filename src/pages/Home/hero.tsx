@@ -16,24 +16,26 @@ export default function HeroSection() {
 
 
                 <div className="flex flex-col lg:flex-row gap-[10px] items-center justify-center mt-[30px]">
-                    <button className="px-[26px] py-[12px] bg-[#000] w-full sm:w-auto text-white rounded-[12px] text-[16px] font-medium">Join the Program</button>
-                    <div className="flex gap-[8px] w-full sm:w-auto">
+                    <a href="/signup"><button className="px-[60px] py-[12px] bg-[#000] w-full sm:w-auto text-white rounded-[12px] text-[16px] font-medium">Join the Program</button></a>
+                    {/* <div className="flex gap-[8px] w-full sm:w-auto">
                         <button className="px-[20px] py-[10px] border-[2px] border-[#2563EB] rounded-[12px] w-full sm:w-auto">
                             Watch How It Works <img src="/hero/play.svg" alt="play icon" className="inline-block ml-[6px]" />
                         </button>
-                    </div>
+                    </div> */}
                 </div>
 
                 {/* sponsors corner */}
                 <div id="works" className=" pt-[50px] lg:mt-[100px] overflow-hidden">
-                    <p className="font-semibold text-[#373737] lg:text-[18px]">Global Tech Tools & Employers</p>
+                    <p className="font-semibold text-[#373737] lg:text-[18px]">Tech Tools & Aspirational Employers</p>
 
-                    <div className="flex gap-[20px] mt-[10px] items-center justify-between animate-marquee whitespace-nowrap">
-                        <img src="/hero/coinbase.svg" alt="Coinbase" className="inline-block" />
-                        <img src="/hero/spotify.svg" alt="Spotify" className="inline-block" />
-                        <img src="/hero/slack.svg" alt="Slack" className="inline-block" />
-                        <img src="/hero/dropbox.svg" alt="Dropbox" className="inline-block" />
-                        <img src="/hero/zoom.svg" alt="Zoom" className="inline-block" />
+                    <div className="flex gap-[20px] lg:mt-[30px] mt-[10px] items-center justify-between whitespace-nowrap overflow-x w-full">
+                        <img src="/hero/google.svg" alt="Google" className="inline-block" />
+                        <img src="/hero/linkendin.svg" alt="LinkedIn" className="inline-block" />
+                        <img src="/hero/microsoft.svg" alt="Microsoft" className="inline-block" />
+                        <img src="/hero/nestle.svg" alt="Dropbox" className="inline-block" />
+                        <img src="/hero/slack.svg" alt="Zoom" className="inline-block" />
+                        <img src="/hero/aws.svg" alt="Zoom" className="inline-block" />
+                        <img src="/hero/unilever.svg" alt="Zoom" className="inline-block" />
                     </div>
                 </div>
             </div>

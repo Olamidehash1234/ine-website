@@ -21,6 +21,10 @@
     font-family: "Young Serif", sans-serif;
   }
 
+  h2{
+    font-family: "Poppins", sans-serif;
+  }
+
   .funny-image {
     position: relative;
     top: -30px;
@@ -38,67 +42,60 @@
     max-height: 305px;
   }
 
-  .inter{
+  .inter {
     font-family: inter;
   }
 
-  .manrope{
+  .manrope {
     font-family: "Manrope";
   }
 
-  .poppins{
+  .poppins {
     font-family: "poppins";
   }
 
-  
-.site-footer {
-  position: relative;
-  z-index: 2; /* base stacking context for the pseudo element */
-}
 
-
-.site-footer::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -190px;       
-  height: 130px;
-  pointer-events: none;
-  z-index: 1;
-  /* multi-stop linear gradient like in the screenshot */
-  background: linear-gradient(90deg,
-    #1ED760 2%,
-    #2157FF 31%,
-    #1205D4 67%,
-    #6A00FF 100%);
-  /* soft rounded-edge effect and slight blur to match screenshot */
-  filter: blur(80px);
-  opacity: 0.75;
-  /* transform-origin: top center; */
-  /* border-bottom: 2px solid rgba(255,255,255,0.06); subtle separation line */
-  border-radius: 0 0 6px 6px;
-}
-
-/* prevent the gradient from covering the content - content should sit above */
-.site-footer > .relative,
-.site-footer > .z-10 {
-  position: relative;
-  z-index: 10;
-}
-
-/* small responsive tweaks - tighten the band on very small screens */
-@media (max-width: 480px) {
-  .site-footer::before {
-    top: -90px;
-    height: 50px;
-    filter: blur(40px);
+  .site-footer {
+    position: relative;
   }
-}
 
-/* optional: brighten social icons on hover slightly */
-.site-footer .social-btn:hover {
-  box-shadow: 0 4px 14px rgba(33, 150, 243, 0.12);
-}
+  .site-footer::before {
+    content: "";
+    bottom: 150px;
+    left: 0;
+    display: block;
+    filter: blur(80px);
+    height: 80%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+
+    background: linear-gradient(90deg,
+        #1ED760 2%,
+        #2157FF 31%,
+        #1205D4 67%,
+        #6A00FF 100%);
+  }
+
+  /* prevent the gradient from covering the content - content should sit above */
+  .site-footer>.relative,
+  .site-footer>.z-10 {
+    position: relative;
+    z-index: 10;
+  }
+
+  /* small responsive tweaks - tighten the band on very small screens */
+  @media (max-width: 480px) {
+    .site-footer::before {
+      top: -90px;
+      height: 50px;
+      filter: blur(40px);
+    }
+  }
+
+  /* optional: brighten social icons on hover slightly */
+  .site-footer .social-btn:hover {
+    box-shadow: 0 4px 14px rgba(33, 150, 243, 0.12);
+  }
 
 }

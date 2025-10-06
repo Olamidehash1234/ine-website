@@ -15,7 +15,7 @@ export default function Pricing() {
                         <div className="text-4xl sm:text-[56px] font-semibold text-gray-900">₦50,000</div>
                         <div className="text-[16px] text-[#4B5768] mt-2">/ Month</div>
                     </div>
-                    <button className="mt-[16px] py-[10px] border-[1.5px] border-[#1D4ED8] text-[#1D4ED8] rounded-lg w-full">Get Started Now</button>
+                    <a href="/signup"><button className="mt-[16px] py-[10px] border-[1.5px] border-[#1D4ED8] text-[#1D4ED8] rounded-lg w-full">Get Started Now</button></a>
                     <div className="mt-[30px]">
                         <div className="flex flex-row mt-[10px] gap-[10px] items-center">
                             <img src="/mark1.svg" alt="" />
@@ -64,7 +64,7 @@ export default function Pricing() {
                         <div className="text-4xl sm:text-[56px] font-semibold text-white">₦75,000</div>
                         <div className="text-[16px] text-white mt-2">/ Month</div>
                     </div>
-                    <button className="mt-[16px] py-[10px] border-[1.5px] bg-[#FFFFFF] text-[#1D4ED8] rounded-lg w-full">Join the Hybrid Program</button>
+                    <a href="/signup"><button className="mt-[16px] py-[10px] border-[1.5px] bg-[#FFFFFF] text-[#1D4ED8] rounded-lg w-full">Join the Hybrid Program</button></a>
                     <div className="mt-[30px]">
                         <div className="flex flex-row mt-[10px] gap-[10px] items-center">
                             <img src="/mark1.svg" alt="" />

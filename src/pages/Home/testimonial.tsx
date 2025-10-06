@@ -1,27 +1,27 @@
 const testimonials = [
     {
-        name: "Jenny Wilson",
-        company: "Grower.io",
+        name: "Tomiwa A.",
+        company: " 400lv Computer Sc. Student",
         quote:
-            "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+            "“Before joining Image Nation, I only knew theory. Now I’ve built real projects, learned teamwork, and even use AI tools daily. I feel ready for any challenge.”",
     },
     {
-        name: "Devon Lane",
-        company: "DLDesign.co",
+        name: "Mrs. Adeyemi",
+        company: " Parent (CU)",
         quote:
-            "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+            "“I’ve seen a huge change in my son. He’s more focused, confident, and always talking about the projects they’re building. It’s been more than a program, it’s a direction for his future.”",
     },
     {
-        name: "Devon Lane",
-        company: "DLDesign.co",
+        name: "Dr. Ajayie",
+        company: " Faculty Advisor, Crawford University",
         quote:
-            "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+            "“Partnering with Image Nation EduTech gave our students hands-on experience. The results were clear: creativity, collaboration, and real innovation beyond the classroom.”",
     },
     {
-        name: "Devon Lane",
-        company: "DLDesign.co",
+        name: "Samuel O.",
+        company: "Project Mentor & Software Engineer",
         quote:
-            "We love Landingfolio! Our designers were using it for their projects, so we already knew what kind of design they want.",
+            "“These students are not just learning skills; they’re solving real problems. Watching them grow from beginners to confident innovators is inspiring.”",
     },
 ];
 
@@ -41,7 +41,7 @@ export default function Testimonials() {
                 <p className="text-[16px] lg:text-[20px] font-medium leading-[26px] text-[#000000]">Testimonials</p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mt-[20px] lg:mt-[40px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 sm:gap-[35px] mt-[20px] lg:mt-[40px]">
                 {testimonials.map((item, index) => (
                     <div key={index} className="text-sm text-gray-700">
                         <Stars />

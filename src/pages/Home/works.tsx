@@ -38,32 +38,50 @@ const steps = [
 ];
 
 export default function Works() {
-    return (
-        <div className="px-[16px] pt-[60px] pb-[80px] sm:px-[80px] sm:pt-[80px] sm:pb-[120px]">
-            <div className="flex gap-[5px] align-center items-center mb-[10px]">
-                <img src="/world.svg" alt="" />
-                <p className="text-[16px] lg:text-[20px] font-medium leading-[26px] text-[#000000]">How it works?</p>
-            </div>
+  return (
+    <div className="px-[16px] pt-[60px] pb-[80px] sm:px-[80px] sm:pt-[80px] sm:pb-[120px]">
+      {/* Section Header */}
+      <div className="flex gap-[5px] items-center mb-[10px]">
+        <img src="/world.svg" alt="World Icon" />
+        <p className="text-[16px] lg:text-[20px] font-medium leading-[26px] text-[#000000]">
+          How it works?
+        </p>
+      </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-[50px] mt-[20px] lg:mt-[40px]">
-                {steps.map((step, index) => (
-                    <div key={index} className="flex flex-col gap-4 lg:gap-[30px] flex-grow">
-                        {/* Number + Title */}
-                        <div>
-                            <span className="text-blue-600 font-semibold text-lg lg:text-[40px]">{step.number}</span>
-                            <h3 className="text-lg lg:text-[24px] font-semibold mt-1 lg:mt-[10px]">{step.title}</h3>
-                            <p className="text-sm lg:text-[16px] text-gray-600 mt-1 lg:mt-[10px] leading-[150%]">{step.text}</p>
-                        </div>
+      {/* Steps Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-[50px] mt-[20px] lg:mt-[40px]">
+        {steps.map((step, index) => {
+          const isGray = ["02", "04", "06"].includes(step.number);
 
-                        {/* Image */}
-                        <img
-                            src={step.image}
-                            alt={step.title}
-                            className="rounded-lg w-full h-48 lg:h-full object-cover"
-                        />
-                    </div>
-                ))}
+          return (
+            <div key={index} className="flex flex-col gap-4 lg:gap-[30px] flex-grow">
+              {/* Number + Title */}
+              <div>
+                <span
+                  className={`font-semibold text-lg lg:text-[40px] ${
+                    isGray ? "text-[#494949]" : "text-blue-600"
+                  }`}
+                >
+                  {step.number}
+                </span>
+                <h3 className="text-lg lg:text-[24px] font-semibold mt-1 lg:mt-[10px]">
+                  {step.title}
+                </h3>
+                <p className="text-sm lg:text-[16px] text-gray-600 mt-1 lg:mt-[10px] leading-[150%]">
+                  {step.text}
+                </p>
+              </div>
+
+              {/* Image */}
+              <img
+                src={step.image}
+                alt={step.title}
+                className="rounded-lg w-full h-48 lg:h-full object-cover"
+              />
             </div>
-        </div>
-    );
+          );
+        })}
+      </div>
+    </div>
+  );
 }

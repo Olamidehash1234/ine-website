@@ -61,7 +61,7 @@ export default function Journey() {
                 </div>
 
                 <div className="flex flex-col gap-4 lg:gap-[30px] items-center">
-                    <div className="flex flex-col gap-[10px] items-center text-center lg:mt-[58px]">
+                    <div className="flex flex-col gap-[10px] items-center text-center lg:mt-[26px]">
                         <img src="/internship.svg" alt="" className="w-[40px] h-[40px]" />
 
                         <h2 className="font-bold text-[21.3px] text-[#050395]"> Internship & Real-World Experience </h2>

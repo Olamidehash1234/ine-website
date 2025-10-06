@@ -5,14 +5,15 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        Manrope: ['Manrope', 'sans-serif'],
+        Poppins: ['Poppins', 'sans-serif'],
+        YoungSerif: ['Young Serif', 'serif'],
+        PTsans: ['PT Sans', 'sans-serif'],
+        PlusJakartaSans: ['Plus Jakarta Sans', 'sans-serif'],
+      }
+    },  
   },
   plugins: [],
-  fontFamily: {
-    Manrope: ['Manrope', 'sans-serif'],
-    Poppins: ['Poppins', 'sans-serif'],
-    YoungSerif: ['Young Serif', 'serif'],
-    PTsans: ['PT Sans', 'sans-serif'],
-    PlusJakartaSans: ['Plus Jakarta Sans', 'sans-serif'],
-  }
 }
