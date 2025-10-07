@@ -4,7 +4,7 @@ export default function SignupSection() {
   const [isRoleOpen, setIsRoleOpen] = useState(false);
   const [isPricingOpen, setIsPricingOpen] = useState(false);
   const [selectedRole, setSelectedRole] = useState('Select a role');
-  const [selectedPricing, setSelectedPricing] = useState('Starter (₦50,000)');
+  const [selectedPricing, setSelectedPricing] = useState('Starter (₦35,000)');
 
   const roleDropdownRef = useRef<HTMLDivElement>(null);
   const pricingDropdownRef = useRef<HTMLDivElement>(null);
@@ -24,7 +24,7 @@ export default function SignupSection() {
   }, []);
 
   const roles = ['Frontend Development', 'Backend Development', "UI/UX Design", "Project Management"];
-  const pricingOptions = ['Starter (₦50,000)', 'Hybrid Growth (₦75,000)'];
+  const pricingOptions = ['Starter (₦35,000)', 'Hybrid Growth (₦50,000)'];
 
   return (
     <section className="flex flex-col lg:flex-row min-h-screen font-sans w-full">

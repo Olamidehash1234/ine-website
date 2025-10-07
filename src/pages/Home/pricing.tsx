@@ -12,7 +12,7 @@ export default function Pricing() {
 
                     <p className="text-[#44474D] text-[16px] mt-[10px]">Ideal for students who want structured growth alongside school.</p>
                     <div className="mt-6 mb-[16px] flex items-center gap-4">
-                        <div className="text-4xl sm:text-[56px] font-semibold text-gray-900">₦50,000</div>
+                        <div className="text-4xl sm:text-[56px] font-semibold text-gray-900">₦35,000</div>
                         <div className="text-[16px] text-[#4B5768] mt-2">/ Month</div>
                     </div>
                     <a href="/signup"><button className="mt-[16px] py-[10px] border-[1.5px] border-[#1D4ED8] text-[#1D4ED8] rounded-lg w-full">Get Started Now</button></a>
@@ -61,7 +61,7 @@ export default function Pricing() {
 
                     <p className="text-white text-[16px] mt-[10px]">Best for students who want mentorship, branding, and bigger opportunities.</p>
                     <div className="mt-6 mb-[16px] flex items-center text-center gap-4">
-                        <div className="text-4xl sm:text-[56px] font-semibold text-white">₦75,000</div>
+                        <div className="text-4xl sm:text-[56px] font-semibold text-white">₦50,000</div>
                         <div className="text-[16px] text-white mt-2">/ Month</div>
                     </div>
                     <a href="/signup"><button className="mt-[16px] py-[10px] border-[1.5px] bg-[#FFFFFF] text-[#1D4ED8] rounded-lg w-full">Join the Hybrid Program</button></a>

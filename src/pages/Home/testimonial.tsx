@@ -3,25 +3,25 @@ const testimonials = [
         name: "Tomiwa A.",
         company: " 400lv Computer Sc. Student",
         quote:
-            "“Before joining Image Nation, I only knew theory. Now I’ve built real projects, learned teamwork, and even use AI tools daily. I feel ready for any challenge.”",
+            "Before joining Image Nation, I only knew theory. Now I’ve built real projects, learned teamwork, and even use AI tools daily. I feel ready for any challenge.",
     },
     {
         name: "Mrs. Adeyemi",
         company: " Parent (CU)",
         quote:
-            "“I’ve seen a huge change in my son. He’s more focused, confident, and always talking about the projects they’re building. It’s been more than a program, it’s a direction for his future.”",
+            "I’ve seen a huge change in my son. He’s more focused, confident, and always talking about the projects they’re building. It’s been more than a program, it’s a direction for his future.",
     },
     {
         name: "Dr. Ajayie",
         company: " Faculty Advisor, Crawford University",
         quote:
-            "“Partnering with Image Nation EduTech gave our students hands-on experience. The results were clear: creativity, collaboration, and real innovation beyond the classroom.”",
+            "Partnering with Image Nation EduTech gave our students hands-on experience. The results were clear: creativity, collaboration, and real innovation beyond the classroom.",
     },
     {
         name: "Samuel O.",
         company: "Project Mentor & Software Engineer",
         quote:
-            "“These students are not just learning skills; they’re solving real problems. Watching them grow from beginners to confident innovators is inspiring.”",
+            "These students are not just learning skills; they’re solving real problems. Watching them grow from beginners to confident innovators is inspiring.",
     },
 ];
 
