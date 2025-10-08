@@ -46,7 +46,7 @@ const Toast: React.FC<ToastProps> = ({ message, type, show, onHide }) => {
   const getBgColor = () => {
     switch (type) {
       case 'success':
-        return 'bg-[#053A7A]';
+        return 'bg-[#3663EB]';
       case 'error':
         return 'bg-red-500';
       case 'loading':
@@ -55,14 +55,14 @@ const Toast: React.FC<ToastProps> = ({ message, type, show, onHide }) => {
   };
 
   return (
-    <div className="fixed top-[90px] right-6 z-50">
+    <div className="fixed top-[50px] right-6 z-50">
       <div className={`${getBgColor()} text-white px-6 py-3 rounded-lg shadow-lg flex items-center space-x-2 min-w-[300px] justify-center transition-all duration-300 ease-in-out`}>
         <span className="flex-shrink-0">{getIcon()}</span>
         <p className="text-[16px] font-medium">{message}</p>
       </div>
       {(type === 'success' || type === 'error') && (
         <div className="h-1 w-full bg-white/30 rounded-b-lg overflow-hidden">
-          <div className="h-full bg-[#FCF9F5]" style={{ width: '100%', animation: 'toast-progress 5s linear forwards' }}></div>
+          <div className="h-full bg-[#FCF9F5]" style={{ width: '100%', animation: 'toast-progress 3s linear forwards' }}></div>
         </div>
       )}
       <style>{`
