@@ -9,13 +9,13 @@ export default function Navbar() {
 
   return (
     <section className="section relative">
-      <div className="bg-[#00048F] py-[20px] px-[16px] sm:py-[30px] sm:px-[80px] flex justify-between items-center">
+      <div className="bg-[#00048F] py-[20px] px-[16px] lg:py-[30px] lg:px-[80px] flex justify-between items-center">
         <div>
           <img src="/logo.svg" alt="Logo" />
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden sm:flex items-center space-x-[30px] text-white text-[16px] font-medium">
+        <div className="hidden lg:flex items-center space-x-[30px] text-white text-[16px] font-medium">
           <a href="#about">About</a>
           <a href="#works">Industries</a>
           <a href="#pricing">Pricing</a>
@@ -24,7 +24,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="sm:hidden text-white text-[24px]"
+          className="lg:hidden text-white text-[24px]"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           ☰

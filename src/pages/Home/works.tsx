@@ -39,7 +39,7 @@ const steps = [
 
 export default function Works() {
   return (
-    <div className="px-[16px] pt-[60px] pb-[80px] sm:px-[80px] sm:pt-[80px] sm:pb-[120px]">
+    <div className="px-[16px] pt-[60px] pb-[80px] lg:px-[80px] lg:pt-[80px] lg:pb-[120px]">
       {/* Section Header */}
       <div className="flex gap-[5px] items-center mb-[10px]">
         <img src="/world.svg" alt="World Icon" />
@@ -49,7 +49,7 @@ export default function Works() {
       </div>
 
       {/* Steps Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-[50px] mt-[20px] lg:mt-[40px]">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-[50px] mt-[20px] lg:mt-[40px] items-end">
         {steps.map((step, index) => {
           const isGray = ["02", "04", "06"].includes(step.number);
 

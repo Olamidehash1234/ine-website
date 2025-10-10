@@ -35,17 +35,17 @@ const Stars = () => (
 
 export default function Testimonials() {
     return (
-        <section id="testimonials" className="px-[16px] pt-[60px] pb-[80px] sm:px-[80px] sm:pt-[60px] sm:pb-[120px]">
+        <section id="testimonials" className="px-[16px] pt-[60px] pb-[80px] lg:px-[80px] lg:pt-[60px] lg:pb-[120px]">
             <div className="flex gap-[5px] align-center items-center mb-[10px]">
                 <img src="/chat.svg" alt="" />
                 <p className="text-[16px] lg:text-[20px] font-medium leading-[26px] text-[#000000]">Testimonials</p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 sm:gap-[35px] mt-[20px] lg:mt-[40px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-[35px] mt-[20px] lg:mt-[40px]">
                 {testimonials.map((item, index) => (
                     <div key={index} className="text-sm text-gray-700">
                         <Stars />
-                        <p className="text-[#090914] mt-4 mb-4 font-medium sm:text-[16px] leading-relaxed">"{item.quote}"</p>
+                        <p className="text-[#090914] mt-4 mb-4 font-medium lg:text-[16px] leading-relaxed">"{item.quote}"</p>
                         <div className="font-medium text-[#090914]">
                             {item.name}{" "}
                             <span className="text-[#64748B] font-medium ml-2">{item.company}</span>

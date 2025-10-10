@@ -1,18 +1,18 @@
 export default function Pricing() {
     return (
-        <section id="pricing" className="px-[16px] pt-[60px] pb-[80px] sm:px-[80px] sm:pt-[80px] sm:pb-[120px]">
+        <section id="pricing" className="px-[16px] pt-[60px] pb-[80px] lg:px-[80px] lg:pt-[80px] lg:pb-[120px]">
             <div className="flex gap-[5px] align-center items-center mb-[10px]">
                 <img src="/dollar.svg" alt="" />
                 <p className="text-[16px] lg:text-[20px] font-medium leading-[26px] text-[#000000]">Pricing</p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 mt-[30px] gap-[20px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 mt-[30px] gap-[20px]">
                 <div className="border border-gray-300 rounded-lg px-[24px] py-[40px]">
-                    <h2 className="font-semibold sm:text-[22px] text-[#191D23]">Starter</h2>
+                    <h2 className="font-semibold lg:text-[22px] text-[#191D23]">Starter</h2>
 
                     <p className="text-[#44474D] text-[16px] mt-[10px]">Ideal for students who want structured growth alongside school.</p>
                     <div className="mt-6 mb-[16px] flex items-center gap-4">
-                        <div className="text-4xl sm:text-[56px] font-semibold text-gray-900">₦35,000</div>
+                        <div className="text-4xl lg:text-[56px] font-semibold text-gray-900">₦35,000</div>
                         <div className="text-[16px] text-[#4B5768] mt-2">/ Month</div>
                     </div>
                     <a href="/signup"><button className="mt-[16px] py-[10px] border-[1.5px] border-[#1D4ED8] text-[#1D4ED8] rounded-lg w-full">Get Started Now</button></a>
@@ -57,11 +57,11 @@ export default function Pricing() {
                 </div>
 
                 <div className="bg-gradient-to-br from-[#2157FF] via-[#0006CC] to-[#6A00FF] rounded-[12px] px-[24px] py-[40px]">
-                    <h2 className="font-semibold sm:text-[22px] text-white">Hybrid Growth</h2>
+                    <h2 className="font-semibold lg:text-[22px] text-white">Hybrid Growth</h2>
 
                     <p className="text-white text-[16px] mt-[10px]">Best for students who want mentorship, branding, and bigger opportunities.</p>
                     <div className="mt-6 mb-[16px] flex items-center text-center gap-4">
-                        <div className="text-4xl sm:text-[56px] font-semibold text-white">₦50,000</div>
+                        <div className="text-4xl lg:text-[56px] font-semibold text-white">₦50,000</div>
                         <div className="text-[16px] text-white mt-2">/ Month</div>
                     </div>
                     <a href="/signup"><button className="mt-[16px] py-[10px] border-[1.5px] bg-[#FFFFFF] text-[#1D4ED8] rounded-lg w-full">Join the Hybrid Program</button></a>

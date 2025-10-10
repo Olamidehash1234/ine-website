@@ -1,12 +1,12 @@
 export default function Matters() {
     return (
-        <div className="px-[16px] pb-[60px] sm:px-[80px] sm:pb-[120px] ">
+        <div className="px-[16px] pb-[60px] lg:px-[80px] lg:pb-[120px] ">
             <div className="flex gap-[5px] align-center items-center mb-[10px]">
                 <img src="/about/world.svg" alt="" />
                 <p className="text-[16px] lg:text-[20px] font-medium leading-[26px] text-[#000000]">Why this matters?</p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-[41px] mt-[40px]">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[41px] mt-[40px]">
                 <div className="border-[3px] rounded-[2px] flex flex-col border-[#E5E7EB] px-[28px] pt-[40px] pb-[25px] text-center items-center " style={{ borderImage: "linear-gradient(to bottom, #3021FF 0%, #FF0004 48%, #1D1499 100%) 1" }}>
                     <img src="/project.svg" alt="" className="w-auto h-auto object-cover" />
                     <h2 className="font-semibold text-[20px] lg:text-[24px] mt-[20px]">No Real Projects</h2>

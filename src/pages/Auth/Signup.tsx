@@ -13,6 +13,7 @@ export default function SignupSection() {
     email: "",
     phone: "",
   });
+  
   const [toast, setToast] = useState({
     show: false,
     message: "",
@@ -61,7 +62,7 @@ export default function SignupSection() {
     return pricing.includes("Starter") ? 35000 : 50000;
   };
 
-  const handlePaystackSuccess = (reference: PaystackResponse) => {
+  const handlePaystackSuccess = (reference: PaystackTransaction) => {
     console.log("Payment successful!", reference);
     setPaymentReference(reference.reference);
     setIsPaymentComplete(true);
@@ -200,7 +201,7 @@ export default function SignupSection() {
                 </svg>
               ))}
           </div>
-          <p className="text-sm sm:text-[21px] poppins lg:leading-[34px] max-w-md mb-6 leading-relaxed">
+          <p className="text-sm lg:text-[21px] poppins lg:leading-[34px] max-w-md mb-6 leading-relaxed">
             “I’ve seen a huge change in my son. He’s more focused, confident,
             and always talking about the projects they’re building.”
           </p>
@@ -238,7 +239,7 @@ export default function SignupSection() {
           onSubmit={handleSubmit}
           className="bg-transparent w-full max-w-[600px] space-y-6 poppins"
         >
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col lg:flex-row gap-4">
             <div className="flex-1">
               <label className="block poppins text-sm font-medium text-[#090914] mb-1">
                 Full name
