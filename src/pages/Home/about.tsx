@@ -10,8 +10,8 @@ export default function AboutSection() {
                     <p className="text-[20px] lg:text-[36px] font-medium lg:leading-[135%]">We are <span className="text-[#2563EB]">Image Nation EduTech</span>, a career building community helping students go beyond academics. Our focus is on real projects, mentorship, and using modern tools including AI  to prepare students for the future of work. We partner with schools to create opportunities that last a lifetime.</p>
                 </div>
 
-                <div className="lg:w-auto lg:h-auto w-full h-[400px]">
-                    <img src="/image1.png" alt="" className="w-full h-full object-cover" />
+                <div className="lg:w-auto lg:h-auto w-full h-[350px]">
+                    <img src="/image1.png" alt="" className="w-full h-full object-cover  rounded-[12px]" />
                 </div>
             </div>
         </div>

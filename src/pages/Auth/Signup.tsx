@@ -66,11 +66,58 @@ export default function SignupSection() {
     console.log("Payment successful!", reference);
     setPaymentReference(reference.reference);
     setIsPaymentComplete(true);
+
+    // Automatically submit form after successful payment
+    const templateParams = {
+      name: formData.name,
+      email: formData.email,
+      phone: formData.phone,
+      role: selectedRole,
+      package: selectedPricing,
+      paymentReference: reference.reference,
+      time: new Date().toLocaleString(),
+    };
+
     setToast({
       show: true,
-      message: "Payment successful! Please complete your registration.",
-      type: "success",
+      message: "Payment successful! Submitting your application...",
+      type: "loading",
     });
+
+    emailjs
+      .send(
+        import.meta.env.VITE_EMAILJS_SERVICE_ID,
+        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", {
+            status: response.status,
+            text: response.text,
+            timestamp: new Date().toISOString(),
+          });
+          setToast({
+            show: true,
+            message: "Thank you! Your subscription has been submitted successfully.",
+            type: "success",
+          });
+          resetForm();
+        },
+        (error) => {
+          console.error("FAILED...", {
+            error: error.text,
+            timestamp: new Date().toISOString(),
+            formData: templateParams,
+          });
+          setToast({
+            show: true,
+            message: "Sorry, something went wrong. Please try again later.",
+            type: "error",
+          });
+        }
+      );
   };
 
   const handlePaystackClose = () => {
@@ -79,6 +126,15 @@ export default function SignupSection() {
       message: "Payment cancelled. Please try again.",
       type: "error",
     });
+  };
+
+  // Add this helper function after the existing state declarations
+  const resetForm = () => {
+    setFormData({ name: "", email: "", phone: "" });
+    setSelectedRole("Select a role");
+    setSelectedPricing("Starter (₦35,000)");
+    setIsPaymentComplete(false);
+    setPaymentReference("");
   };
 
   // Handle form submit
@@ -130,9 +186,7 @@ export default function SignupSection() {
               "Thank you! Your subscription has been submitted successfully.",
             type: "success",
           });
-          setFormData({ name: "", email: "", phone: "" });
-          setSelectedRole("Select a role");
-          setSelectedPricing("Starter (₦35,000)");
+          resetForm(); // Use the new resetForm function instead of individual resets
         },
         (error) => {
           console.error("FAILED...", {
@@ -378,7 +432,7 @@ export default function SignupSection() {
               onClick={handlePayment}
               className="w-full bg-[#0066FF] text-white font-medium rounded-md py-3 hover:bg-[#0050d1] transition"
             >
-              Pay Now
+              Subscribe
             </button>
           ) : (
             <button
