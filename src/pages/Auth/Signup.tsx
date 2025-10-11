@@ -13,7 +13,7 @@ export default function SignupSection() {
     email: "",
     phone: "",
   });
-  
+
   const [toast, setToast] = useState({
     show: false,
     message: "",
@@ -58,8 +58,11 @@ export default function SignupSection() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const getAmount = (pricing: string) => {
-    return pricing.includes("Starter") ? 35000 : 50000;
+  const getSubscriptionPlanId = (pricing: string) => {
+    // You'll need to create these plan IDs in your Paystack dashboard
+    return pricing.includes("Starter")
+      ? import.meta.env.VITE_PAYSTACK_STARTER_PLAN_ID
+      : import.meta.env.VITE_PAYSTACK_HYBRID_PLAN_ID;
   };
 
   const handlePaystackSuccess = (reference: PaystackTransaction) => {
@@ -208,7 +211,7 @@ export default function SignupSection() {
     paystack.newTransaction({
       key: import.meta.env.VITE_PAYSTACK_PUBLIC_KEY,
       email: formData.email,
-      amount: getAmount(selectedPricing) * 100,
+      plan: getSubscriptionPlanId(selectedPricing), // Use plan instead of amount
       onSuccess: (transaction: any) => handlePaystackSuccess(transaction),
       onCancel: handlePaystackClose,
     });
@@ -348,9 +351,8 @@ export default function SignupSection() {
             >
               {selectedRole}
               <svg
-                className={`w-4 h-4 transition-transform ${
-                  isRoleOpen ? "rotate-180" : ""
-                }`}
+                className={`w-4 h-4 transition-transform ${isRoleOpen ? "rotate-180" : ""
+                  }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -393,9 +395,8 @@ export default function SignupSection() {
             >
               {selectedPricing}
               <svg
-                className={`w-4 h-4 transition-transform ${
-                  isPricingOpen ? "rotate-180" : ""
-                }`}
+                className={`w-4 h-4 transition-transform ${isPricingOpen ? "rotate-180" : ""
+                  }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -426,6 +427,10 @@ export default function SignupSection() {
             )}
           </div>
 
+          <div className="text-sm text-gray-600 mb-4">
+            <p>By subscribing, you agree to automatic monthly payments. You can cancel anytime through your payment provider.</p>
+          </div>
+
           {formData.email && selectedPricing && !isPaymentComplete ? (
             <button
               type="button"
@@ -438,11 +443,10 @@ export default function SignupSection() {
             <button
               type="submit"
               disabled={!isPaymentComplete}
-              className={`w-full font-medium rounded-md py-3 transition ${
-                isPaymentComplete
-                  ? "bg-[#0066FF] text-white hover:bg-[#0050d1]"
-                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
-              }`}
+              className={`w-full font-medium rounded-md py-3 transition ${isPaymentComplete
+                ? "bg-[#0066FF] text-white hover:bg-[#0050d1]"
+                : "bg-gray-300 text-gray-500 cursor-not-allowed"
+                }`}
             >
               {isPaymentComplete ? "Submit" : "Complete Payment First"}
             </button>

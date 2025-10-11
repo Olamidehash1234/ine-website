@@ -11,7 +11,8 @@ declare module '@paystack/inline-js' {
   interface PaystackOptions {
     key: string;
     email: string;
-    amount: number;
+    amount?: number;  // Make amount optional since we're using plan
+    plan?: string;    // Add plan option for subscriptions
     currency?: string;
     ref?: string;
     firstname?: string;
