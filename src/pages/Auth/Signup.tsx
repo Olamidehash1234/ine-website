@@ -237,12 +237,11 @@ export default function SignupSection() {
             Welcome to Image <br /> Nation EduTech
           </h2>
           <p className="text-white/80 max-w-[430px] poppins lg:text-[18px] lg:leading-[26px]">
-            Clarity gives you the blocks & components you need to create a truly
-            professional website.
+            Learn in-demand digital and AI skills, gain real project experience, and get career-ready skills before graduation.
           </p>
         </div>
 
-        <div className="mt-12">
+        {/* <div className="mt-12">
           <div className="flex gap-1 mb-3">
             {Array(5)
               .fill(null)
@@ -274,7 +273,7 @@ export default function SignupSection() {
               <p className="text-xs poppins text-white/70">Parent (CU)</p>
             </div>
           </div>
-        </div>
+        </div> */}
 
         <div className="absolute bottom-0 left-0 w-full h-24 overflow-hidden">
           <svg

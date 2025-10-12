@@ -1,5 +1,3 @@
-import { FaTwitter, FaFacebookF, FaInstagram, FaGithub } from "react-icons/fa";
-
 export default function Footer() {
   return (
     <footer className="site-footer relative bg-black text-gray-300 pt-[60px] lg:pt-[60px]  lg:px-[80px]">
@@ -9,36 +7,10 @@ export default function Footer() {
         <div className="w-full flex flex-col lg:flex-row lg:items-center justify-between gap-6">
           <img src="/logo.svg" alt="" className="w-[150px] lg:w-auto lg:h-auto"/>
 
-          <div className="flex items-center gap-3 justify-center">
-            {/* social icons - circular small buttons */}
-            <a
-              className="social-btn inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 transition"
-              href="#"
-              aria-label="Twitter"
-            >
-              <FaTwitter className="text-sm text-white" />
-            </a>
-            <a
-              className="social-btn inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 transition"
-              href="#"
-              aria-label="Facebook"
-            >
-              <FaFacebookF className="text-sm text-white" />
-            </a>
-            <a
-              className="social-btn inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 transition"
-              href="#"
-              aria-label="Instagram"
-            >
-              <FaInstagram className="text-sm text-white" />
-            </a>
-            <a
-              className="social-btn inline-flex items-center justify-center w-9 h-9 rounded-full bg-slate-800 hover:bg-slate-700 transition"
-              href="#"
-              aria-label="GitHub"
-            >
-              <FaGithub className="text-sm text-white" />
-            </a>
+          <div className="flex flex-col gap-3 justify-center">
+            <h1 className="font-semibold poppins">Contact Us</h1>
+            <a className="underline-link" href="mailto:imagenationedutech@hotmail.com">imagenationedutech@hotmail.com</a>
+            <a className="underline-link" href="https://wa.me/+2349160347969">+234 916 0347 969</a>
           </div>
         </div>
 

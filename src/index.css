@@ -38,6 +38,10 @@
     }
   }
 
+  .underline-link:hover{
+    text-decoration: underline;
+  }
+
   .section {
     max-height: 305px;
   }
