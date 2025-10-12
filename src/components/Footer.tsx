@@ -9,7 +9,7 @@ export default function Footer() {
 
           <div className="flex flex-col gap-3 justify-center">
             <h1 className="font-semibold poppins">Contact Us</h1>
-            <a className="underline-link" href="mailto:imagenationedutech@hotmail.com">imagenationedutech@hotmail.com</a>
+            <a className="underline-link" href="mailto:imagenationedutech@gmail.com">imagenationedutech@gmail.com</a>
             <a className="underline-link" href="https://wa.me/+2349160347969">+234 916 0347 969</a>
           </div>
         </div>
