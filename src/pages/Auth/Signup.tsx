@@ -58,15 +58,19 @@ export default function SignupSection() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const getSubscriptionPlanId = (pricing: string) => {
-    // You'll need to create these plan IDs in your Paystack dashboard
-    return pricing.includes("Starter")
-      ? import.meta.env.VITE_PAYSTACK_STARTER_PLAN_ID
-      : import.meta.env.VITE_PAYSTACK_HYBRID_PLAN_ID;
+  // Replace plan helper with amount helper
+  const getAmountInKobo = (pricing: string) => {
+    // Map package labels to one-time amounts (NGN). Convert to kobo (multiply by 100).
+    // Adjust amounts here if needed.
+    if (pricing.includes("Hybrid")) {
+      return 50000 * 100; // ₦50,000 => 5,000,000 kobo
+    }
+    // default Starter
+    return 35000 * 100; // ₦35,000 => 3,500,000 kobo
   };
 
   const handlePaystackSuccess = (reference: PaystackTransaction) => {
-    console.log("Payment successful!", reference);
+    // console.log("Payment successful!", reference);
     setPaymentReference(reference.reference);
     setIsPaymentComplete(true);
 
@@ -95,15 +99,11 @@ export default function SignupSection() {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
-        (response) => {
-          console.log("SUCCESS!", {
-            status: response.status,
-            text: response.text,
-            timestamp: new Date().toISOString(),
-          });
+        () => {
+          // console.log("SUCCESS!")
           setToast({
             show: true,
-            message: "Thank you! Your subscription has been submitted successfully.",
+            message: "Thank you! Your payment has been submitted successfully.",
             type: "success",
           });
           resetForm();
@@ -177,12 +177,12 @@ export default function SignupSection() {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY
       )
       .then(
-        (response) => {
-          console.log("SUCCESS!", {
-            status: response.status,
-            text: response.text,
-            timestamp: new Date().toISOString(),
-          });
+        () => {
+          // console.log("SUCCESS!", {
+          //   status: response.status,
+          //   text: response.text,
+          //   timestamp: new Date().toISOString(),
+          // });
           setToast({
             show: true,
             message:
@@ -208,10 +208,12 @@ export default function SignupSection() {
 
   const handlePayment = () => {
     const paystack = new PaystackPop();
+    const amount = getAmountInKobo(selectedPricing);
+
     paystack.newTransaction({
       key: import.meta.env.VITE_PAYSTACK_PUBLIC_KEY,
       email: formData.email,
-      plan: getSubscriptionPlanId(selectedPricing), // Use plan instead of amount
+      amount, // one-time amount in kobo
       onSuccess: (transaction: any) => handlePaystackSuccess(transaction),
       onCancel: handlePaystackClose,
     });
@@ -241,40 +243,6 @@ export default function SignupSection() {
           </p>
         </div>
 
-        {/* <div className="mt-12">
-          <div className="flex gap-1 mb-3">
-            {Array(5)
-              .fill(null)
-              .map((_, i) => (
-                <svg
-                  key={i}
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="#FFD700"
-                  viewBox="0 0 24 24"
-                  className="w-5 h-5"
-                >
-                  <path d="M12 .587l3.668 7.568L24 9.423l-6 5.847 1.417 8.257L12 19.771l-7.417 3.756L6 15.27 0 9.423l8.332-1.268z" />
-                </svg>
-              ))}
-          </div>
-          <p className="text-sm lg:text-[21px] poppins lg:leading-[34px] max-w-md mb-6 leading-relaxed">
-            “I’ve seen a huge change in my son. He’s more focused, confident,
-            and always talking about the projects they’re building.”
-          </p>
-
-          <div className="flex items-center gap-3">
-            <img
-              src="/man.png"
-              alt="Devon Lane"
-              className="w-10 h-10 lg:w-[45px] lg:h-[45px] rounded-full border-white"
-            />
-            <div>
-              <p className="font-semibold poppins text-sm">Mr. Adeyemi</p>
-              <p className="text-xs poppins text-white/70">Parent (CU)</p>
-            </div>
-          </div>
-        </div> */}
-
         <div className="absolute bottom-0 left-0 w-full h-24 overflow-hidden">
           <svg
             viewBox="0 0 500 150"
@@ -293,9 +261,9 @@ export default function SignupSection() {
       <div className="bg-[#F8FAFC] flex flex-col justify-center items-center lg:w-[60%] py-12 px-6 lg:px-16">
         <form
           onSubmit={handleSubmit}
-          className="bg-transparent w-full max-w-[600px] space-y-6 poppins"
+          className="bg-transparent w-full max-w-[600px] lg:space-y-[20px] poppins"
         >
-          <div className="flex flex-col lg:flex-row gap-4">
+          <div className="flex flex-col lg:flex-row lg:gap-4 gap-[10px] ">
             <div className="flex-1">
               <label className="block poppins text-sm font-medium text-[#090914] mb-1">
                 Full name
@@ -306,7 +274,7 @@ export default function SignupSection() {
                 value={formData.name}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded-md px-4 py-[12px] focus:outline-none"
+                className="w-full rounded-md border border-[#01010133] mb-[8px] px-3 py-[10px] text-sm placeholder-[#01010180] lg:leading-[24px]  focus:outline-none"
               />
             </div>
             <div className="flex-1">
@@ -319,13 +287,13 @@ export default function SignupSection() {
                 value={formData.email}
                 onChange={handleChange}
                 required
-                className="w-full border border-gray-300 rounded-md px-4 py-[12px] focus:outline-none"
+                className="w-full rounded-md border border-[#01010133] mb-[8px] px-3 py-[10px] text-sm placeholder-[#01010180] lg:leading-[24px]  focus:outline-none"
               />
             </div>
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-[#090914] mb-1">
+            <label className="block text-sm font-medium text-[#090914] mt-[10px] lg:mt-0 mb-1">
               Whatsapp Phone Number
             </label>
             <input
@@ -334,18 +302,18 @@ export default function SignupSection() {
               value={formData.phone}
               onChange={handleChange}
               required
-              className="w-full border border-gray-300 rounded-md px-4 py-[12px] focus:outline-none"
+              className="w-full rounded-md border border-[#01010133] mb-[8px] px-3 py-[10px] text-sm placeholder-[#01010180] lg:leading-[24px]  focus:outline-none"
             />
           </div>
 
           {/* Role Dropdown */}
           <div className="relative" ref={roleDropdownRef}>
-            <label className="block text-sm font-medium text-[#090914] mb-1">
+            <label className="block text-sm font-medium text-[#090914] mt-[13px] lg:mt-0 mb-1">
               Pick a role
             </label>
             <button
               type="button"
-              className="w-full border border-gray-300 rounded-md px-4 py-[12px] bg-white text-left flex justify-between items-center"
+              className="w-full border border-gray-300 rounded-md px-3 py-[10px] bg-white text-left flex justify-between items-center"
               onClick={() => setIsRoleOpen(!isRoleOpen)}
             >
               {selectedRole}
@@ -383,13 +351,13 @@ export default function SignupSection() {
           </div>
 
           {/* Pricing Dropdown */}
-          <div className="relative" ref={pricingDropdownRef}>
-            <label className="block text-sm font-medium text-[#090914] mb-1">
+          <div className="relative mb-[20px]" ref={pricingDropdownRef} >
+            <label className="block text-sm font-medium text-[#090914] mt-[17px] lg:mt-0 mb-1">
               Select Package
             </label>
             <button
               type="button"
-              className="w-full border border-gray-300 rounded-md px-4 py-[12px] bg-white text-left flex justify-between items-center"
+              className="w-full border border-gray-300 rounded-md px-3 py-[10px] bg-white text-left flex justify-between items-center"
               onClick={() => setIsPricingOpen(!isPricingOpen)}
             >
               {selectedPricing}
@@ -426,7 +394,7 @@ export default function SignupSection() {
             )}
           </div>
 
-          <div className="text-sm text-gray-600 mb-4">
+          <div className="text-[13px] text-gray-600 mb-4">
             <p>By subscribing, you agree to automatic monthly payments. You can cancel anytime through your payment provider.</p>
           </div>
 

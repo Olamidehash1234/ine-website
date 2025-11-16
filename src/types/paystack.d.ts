@@ -1,18 +1,17 @@
 interface PaystackTransaction {
   reference: string;
-  trans: string;
-  status: string;
-  message: string;
-  transaction: string;
-  trxref: string;
+  trans?: string;
+  status?: string;
+  message?: string;
+  transaction?: string;
+  trxref?: string;
 }
 
 declare module '@paystack/inline-js' {
   interface PaystackOptions {
     key: string;
     email: string;
-    amount?: number;  // Make amount optional since we're using plan
-    plan?: string;    // Add plan option for subscriptions
+    amount: number;  // required for one-time payments (in kobo)
     currency?: string;
     ref?: string;
     firstname?: string;
