@@ -63,7 +63,7 @@ export default function Pricing() {
                     <div className="mt-6 mb-[16px] flex items-center text-center gap-4">
                         <div className="text-4xl lg:text-[56px] font-semibold text-white">₦150,000</div>
                         <div className="text-[16px] text-white mt-2">/ Semester</div>
-                    </div>
+                    </div> 
                     <a href="/signup"><button className="mt-[16px] py-[10px] border-[1.5px] bg-[#FFFFFF] text-[#1D4ED8] rounded-lg w-full">Join the Hybrid Program</button></a>
                     <div className="mt-[30px]">
                         <div className="flex flex-row mt-[10px] gap-[10px] items-center">
