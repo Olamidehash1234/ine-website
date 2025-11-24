@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import emailjs from "emailjs-com";
 import Toast from "../../components/Toast";
 import PaystackPop from "@paystack/inline-js";
+import SignupMarquee from "../../components/SignupMarquee";
 
 export default function SignupSection() {
   const [isRoleOpen, setIsRoleOpen] = useState(false);
@@ -258,11 +259,14 @@ export default function SignupSection() {
       </div>
 
       {/* Right section */}
-      <div className="bg-[#F8FAFC] flex flex-col justify-center items-center lg:w-[60%] py-12 px-6 lg:px-16">
+      <div className="bg-[#F8FAFC] flex flex-col justify-center items-center lg:w-[60%] py-12 px-6 lg:px-16 relative">
         <form
           onSubmit={handleSubmit}
           className="bg-transparent w-full max-w-[600px] lg:space-y-[20px] poppins"
         >
+          <div className="text-end text-[#d11922] mb-[40px]">
+            <h1>*Just 5 slots left</h1>
+          </div>
           <div className="flex flex-col lg:flex-row lg:gap-4 gap-[10px] ">
             <div className="flex-1">
               <label className="block poppins text-sm font-medium text-[#090914] mb-1">
@@ -318,8 +322,9 @@ export default function SignupSection() {
             >
               {selectedRole}
               <svg
-                className={`w-4 h-4 transition-transform ${isRoleOpen ? "rotate-180" : ""
-                  }`}
+                className={`w-4 h-4 transition-transform ${
+                  isRoleOpen ? "rotate-180" : ""
+                }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -351,7 +356,7 @@ export default function SignupSection() {
           </div>
 
           {/* Pricing Dropdown */}
-          <div className="relative mb-[20px]" ref={pricingDropdownRef} >
+          <div className="relative mb-[20px]" ref={pricingDropdownRef}>
             <label className="block text-sm font-medium text-[#090914] mt-[17px] lg:mt-0 mb-1">
               Select Package
             </label>
@@ -362,8 +367,9 @@ export default function SignupSection() {
             >
               {selectedPricing}
               <svg
-                className={`w-4 h-4 transition-transform ${isPricingOpen ? "rotate-180" : ""
-                  }`}
+                className={`w-4 h-4 transition-transform ${
+                  isPricingOpen ? "rotate-180" : ""
+                }`}
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -395,7 +401,10 @@ export default function SignupSection() {
           </div>
 
           <div className="text-[13px] text-gray-600 mb-4">
-            <p>By subscribing, you agree to automatic monthly payments. You can cancel anytime through your payment provider.</p>
+            <p>
+              By subscribing, you agree to automatic monthly payments. You can
+              cancel anytime through your payment provider.
+            </p>
           </div>
 
           {formData.email && selectedPricing && !isPaymentComplete ? (
@@ -410,15 +419,19 @@ export default function SignupSection() {
             <button
               type="submit"
               disabled={!isPaymentComplete}
-              className={`w-full font-medium rounded-md py-3 transition ${isPaymentComplete
-                ? "bg-[#0066FF] text-white hover:bg-[#0050d1]"
-                : "bg-gray-300 text-gray-500 cursor-not-allowed"
-                }`}
+              className={`w-full font-medium rounded-md py-3 transition mb-[40px] ${
+                isPaymentComplete
+                  ? "bg-[#0066FF] text-white hover:bg-[#0050d1]"
+                  : "bg-gray-300 text-gray-500 cursor-not-allowed"
+              }`}
             >
               {isPaymentComplete ? "Submit" : "Complete Payment First"}
             </button>
           )}
         </form>
+
+        {/* Marquee component */}
+        <SignupMarquee />
       </div>
     </section>
   );
