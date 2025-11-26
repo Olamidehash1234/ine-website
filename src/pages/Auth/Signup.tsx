@@ -8,7 +8,7 @@ export default function SignupSection() {
   const [isRoleOpen, setIsRoleOpen] = useState(false);
   const [isPricingOpen, setIsPricingOpen] = useState(false);
   const [selectedRole, setSelectedRole] = useState("Select a role");
-  const [selectedPricing, setSelectedPricing] = useState("Starter (₦35,000)");
+  const [selectedPricing, setSelectedPricing] = useState("Starter (₦75,000)");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -52,7 +52,7 @@ export default function SignupSection() {
     "UI/UX Design",
     "Project Management",
   ];
-  const pricingOptions = ["Starter (₦35,000)", "Hybrid Growth (₦50,000)"];
+  const pricingOptions = ["Starter (₦75,000)", "Hybrid Growth (₦150,000)"];
 
   // Handle input change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -62,12 +62,11 @@ export default function SignupSection() {
   // Replace plan helper with amount helper
   const getAmountInKobo = (pricing: string) => {
     // Map package labels to one-time amounts (NGN). Convert to kobo (multiply by 100).
-    // Adjust amounts here if needed.
     if (pricing.includes("Hybrid")) {
-      return 50000 * 100; // ₦50,000 => 5,000,000 kobo
+      return 150000 * 100; // ₦150,000 => 15,000,000 kobo
     }
     // default Starter
-    return 35000 * 100; // ₦35,000 => 3,500,000 kobo
+    return 75000 * 100; // ₦75,000 => 7,500,000 kobo
   };
 
   const handlePaystackSuccess = (reference: PaystackTransaction) => {
@@ -136,7 +135,7 @@ export default function SignupSection() {
   const resetForm = () => {
     setFormData({ name: "", email: "", phone: "" });
     setSelectedRole("Select a role");
-    setSelectedPricing("Starter (₦35,000)");
+    setSelectedPricing("Starter (₦75,000)");
     setIsPaymentComplete(false);
     setPaymentReference("");
   };
