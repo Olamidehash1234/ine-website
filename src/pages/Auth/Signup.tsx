@@ -401,8 +401,7 @@ export default function SignupSection() {
 
           <div className="text-[13px] text-gray-600 mb-4">
             <p>
-              By subscribing, you agree to automatic monthly payments. You can
-              cancel anytime through your payment provider.
+              By completing your payment, you agree to our terms and conditions at Image nation edutech.
             </p>
           </div>
 

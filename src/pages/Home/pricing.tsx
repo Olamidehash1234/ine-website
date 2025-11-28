@@ -141,7 +141,7 @@ export default function Pricing() {
             <div className="text-4xl lg:text-[56px] font-semibold text-gray-900">
               ₦75,000
             </div>
-            <div className="text-[16px] text-[#4B5768] mt-2">/ semester</div>
+            <div className="text-[16px] text-[#4B5768] mt-2">/ 3 months cycle </div>
           </div>
           <a href="/signup">
             <button className="mt-[16px] py-[10px] border-[1.5px] border-[#1D4ED8] text-[#1D4ED8] rounded-lg w-full">
@@ -210,7 +210,7 @@ export default function Pricing() {
             <div className="text-4xl lg:text-[56px] font-semibold text-white">
               ₦150,000
             </div>
-            <div className="text-[16px] text-white mt-2">/ Semester</div>
+            <div className="text-[16px] text-white mt-2">/ 3 months cycle </div>
           </div>
           <a href="/signup">
             <button className="mt-[16px] py-[10px] border-[1.5px] bg-[#FFFFFF] text-[#1D4ED8] rounded-lg w-full">
