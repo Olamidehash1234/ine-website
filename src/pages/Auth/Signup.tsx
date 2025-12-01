@@ -263,9 +263,9 @@ export default function SignupSection() {
           onSubmit={handleSubmit}
           className="bg-transparent w-full max-w-[600px] lg:space-y-[20px] poppins"
         >
-          <div className="text-end text-[#d11922] mb-[40px]">
+          {/* <div className="text-end text-[#d11922] mb-[40px]">
             <h1>*Just 5 slots left</h1>
-          </div>
+          </div> */}
           <div className="flex flex-col lg:flex-row lg:gap-4 gap-[10px] ">
             <div className="flex-1">
               <label className="block poppins text-sm font-medium text-[#090914] mb-1">
